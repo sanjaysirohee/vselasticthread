@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no, maximun-scale=1'>
+    <meta name="keywords" content="Healthcare">
+    <meta name='description' content='This is the index page'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./public/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./public/theme1/assets/css/style.css">
+    <link rel="stylesheet" href="./public/assets/css/color.css">
+    <link rel="stylesheet" href="./public/assets/css/new.font.family.css">
+
+    <link href="public/uploads/img/business_icon/1753965409_f9831ad11a954a2aa61d.png" rel="icon">
+  <link href="public/uploads/img/business_icon/1753965409_f9831ad11a954a2aa61d.png" rel="apple-touch-icon">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" ref="stylesheet" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" media="all" /> -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.css" rel="stylesheet" media="all" /> -->
+    <style>
+        a {
+            text-decoration: none !important;
+        }
+
+        #paymentPopup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10%;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #appo-button {
+            position: fixed;
+            bottom: 50%;
+            right: -500%;
+            transform: translateY(50%);
+            z-index: 9999;
+            transition: right .5s;
+        }
+
+        #appo-button.button-open {
+            right: 10px !important;
+        }
+
+        #appointment-booking {
+            position: fixed;
+            bottom: 50%;
+            right: -500%;
+            z-index: 9999;
+            transform: translateY(50%) scale(0);
+            transition: right .5s, transform 1s;
+        }
+
+        #appointment-booking.booking-open {
+            right: 0 !important;
+            transform: translateY(50%) scale(1) !important;
+        }
+
+        #appo-button-close {
+            position: absolute;
+            bottom: 15px;
+            right: 10px;
+        }
+
+        .error-text-font {
+            font-size: 11px !important;
+        }
+
+        .iframe iframe {
+            width: 100%;
+        }
+
+        /* WhatsApp Floating Button */
+
+        #whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            background-color: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        #whatsapp-btn:hover {
+            transform: scale(1.1);
+            background-color: #20b358;
+        }
+    </style>
+
+    <style>
+        :root {
+            --header_background: #fd834e;
+            --header_text: #000000;
+            --navbar_background: #ffffff;
+            --navbar_text: #000000;
+            --searchbar_color: #ffffff;
+            --searchbar_button_color: #000000;
+            --inquiry_button_color: #000000;
+            --footer_background: #ffffff;
+            --footer_text_color: #fd834e;
+            --copyright_background: #050505;
+            --copyright_text_color: #ffffff;
+        }
+
+        body.theme-custom {
+            --bs-orange-100: #ee6f2b;
+            --bs-primary-rgb: 238, 111, 43;
+        }
+
+        .custom-text-color p,
+        .custom-text-color {
+            color: #050505 !important;
+        }
+
+        /* Appointment Styles */
+
+        #appo-button {
+            position: fixed;
+            bottom: 50%;
+            right: -500%;
+            transform: translateY(50%);
+            z-index: 9999;
+            transition: right .5s;
+        }
+
+        #appo-button.button-open {
+            right: 10px !important;
+        }
+
+        #appointment-booking {
+            position: fixed;
+            bottom: 50%;
+            right: -500%;
+            z-index: 9999;
+            transform: translateY(50%) scale(0);
+            transition: right .5s, transform 1s;
+        }
+
+        #appointment-booking.booking-open {
+            right: 0 !important;
+            transform: translateY(50%) scale(1) !important;
+        }
+
+        #appo-button-close {
+            position: absolute;
+            bottom: 15px;
+            right: 10px;
+        }
+
+        .error-text-font {
+            font-size: 11px !important;
+        }
+
+        .iframe iframe {
+            width: 100%;
+        }
+    </style>
+    <title>VS Elastic Thread | 9810109278</title>
+<link rel="canonical" href="https://www.vselasticthread.com/">
+<meta name="document-type" content="Public">
+<meta name="document-rating" content="Safe for Kids">
+<meta name="robots" content="ALL, INDEX, FOLLOW">
+<meta name="googlebot" content="index, follow">
+<meta name="Expires" content="never">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="rating" content="General">
+<meta name="target" content="all">
+<meta name="HandheldFriendly" content="True">
+<meta http-equiv="content-language" content="en">
+<meta name="YahooSeeker" content="Index, Follow">
+<meta property="og: locale" content="en_US">
+<meta content="Yes" name="allow-search">
+<meta name="Content-Language" content="EN">
+<meta name="geo.region" content="IN">
+<meta content="global" name="distribution">
+<meta name="Copyright" content="@ 2022 Demo Company Name">
+<meta name="classification" content>
+<meta name="address" content="Demo Company Name">
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "paymentAccepted": "Cash, Credit Card",
+    "priceRange": "14999",
+    "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Demo Company Name",
+    "addressLocality":
+    "addressRegion":
+    "postalCode": ""
+    "addressCountry": "India",
+    "areaServed": ["","", "0"]
+    },
+    "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4",
+    "reviewCount": "167639"
+    },
+    "name": "Demo Company Name",
+    "image": [
+
+    "https://vselasticthread.com/public/uploads/img/business_logo/1753965409_060e218ae36b49fea07b.png"
+
+    "telephone": "+91-9810109278",
+    "url": "https://www.vselasticthread.com"
+    }
+
+</script>
+<meta property="og:type" content="Demo Company Name">
+<meta property="og:title" content="Demo Company Name">
+<meta property="og: image" content="https://vselasticthread.com/public/uploads/img/business_logo/1753965409_060
+e218ae36b49fea07b.png">
+<meta property="og:description" content>
+<meta property="og:url" content="https://www.vselasticthread.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content>
+<meta name="twitter:title" content="Demo Company Name">
+<meta property="twitter: image" content="https://vselasticthread.com/public/uploads/img/business_logo/175396540
+9_060e218ae36b49fea07b.png">
+<meta name="twitter:site" content="@Demo Company Name">
+<meta name="twitter :domain" content="Demo Company Name">
+<meta name="keywords" content>
+<meta name="description" content>
+<link rel="shortcut icon" href="https://vselasticthread.com/public/uploads/img/business_icon/1753965409 f9831a
+d .... png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body class="theme-custom">
+    <div class="header-background-color ">
+        <div class="container-fluid header-padding d-flex justify-content-between py-1">
+            <div class="first-columns d-flex align-items-center">
+                <ul class="links list-unstyled d-flex mb-0">
+                    <!-- Phone Icon -->
+                    <li class="pe-4">
+                        <a href="tel:+919810109278" class="text-light header-text">
+       <i class="fa-solid fa-phone"></i>
+    </a>
+                    </li>
+
+                    <!-- Phone Number -->
+                    <li class="pe-4">
+                        <a href="tel:+919810109278" class="header-text text-decoration-none fw-bold number-hover">
+       +91-9810109278
+    </a>
+                    </li>
+
+
+                    <!-- WhatsApp -->
+                    <!--<li class="pe-4">-->
+                    <!--    <a target="_blank" -->
+                    <!--       href="https://wa.me/9810109278?text=Hi%2C%20I%20would%20like%20to%20chat%20with%20you" -->
+                    <!--       class="header-text text-success">-->
+                    <!--       <i class="fa-brands fa-whatsapp fs-5"></i>-->
+                    <!--    </a>-->
+                    <!--</li>-->
+
+                    <!-- Chat Icon -->
+                    <!--<li class="pe-4">-->
+                    <!--    <a href="#" class="text-light header-text">-->
+                    <!--       <i class="fa-solid fa-comment-dots fs-5"></i>-->
+                    <!--    </a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+
+
+            <div class="second-columns">
+                <ul class="links list-unstyled text-light d-flex mb-0">
+                    <li>
+                        <button class="btn inquiry_button_color search-btn rounded-pill ms-2 responsive-btn btn-sm" data-bs-target="#inquiryModal" data-bs-toggle="modal" type="submit">Make An Inquiry</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" id="baseUrl" value="" />
+    <input type="hidden" id="checkError" value="0" />
+
+    <nav class="navbar navbar-expand-md navbar-background p-0 sticky-top " style="top: -1px;">
+        <div class="container-fluid header-padding">
+            <a class="navbar-brand" href="">
+        <img class="logo horizontal-logo assets-img-header-logo-png" src="./public/uploads/img/business_logo/1753965409_060e218ae36b49fea07b.png" alt="forecastr logo" width="" height="70px">
+        </a>
+            <button class="navbar-toggler" type="button" style="line-height:inherit;" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item m-0">
+                        <a class="nav-link  text-nowrap" target="" href="./index">
+                                Home                            </a>
+
+                    </li>
+                    <li class="nav-item m-0">
+                        <a class="nav-link  text-nowrap" target="" href="./about">
+                                About Us                            </a>
+
+                    </li>
+                    <li class="nav-item m-0">
+                        <a class="nav-link  text-nowrap" target="" href="./our_products">
+                                Our Products                            </a>
+
+                    </li>
+                    <li class="nav-item m-0">
+                        <a class="nav-link  text-nowrap" target="" href="./industries_we_serve">
+                                Industries We Serve                            </a>
+
+                    </li>
+                    <li class="nav-item m-0">
+                        <a class="nav-link  text-nowrap" target="" href="./certificates">
+                                Certificates                            </a>
+
+                    </li>
+                    <li class="nav-item m-0">
+                        <a class="nav-link  text-nowrap" target="" href="./contact">
+                                Contact                            </a>
+
+                    </li>
+                    <!--<li class=" w-75">-->
+                    <!--    <form class="form-inline d-flex" method="post" action="search">-->
+                    <!--        <input name="search" value="" id="search" class="form-control mr-sm-2 rounded-0 searchbar_color searchbar" type="search" placeholder="Search" aria-label="Search" style="width: 200px!important;" required>-->
+                    <!--        <button class="btn searchbar_button_color search-btn my-2 my-sm-0 rounded-0" type="submit">Search</button>-->
+                    <!--    </form>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-bg-color">
+                    <h5 class="modal-title text-light fw-bold" id="exampleModalLabel">Make an Inquiry</h5>
+                    <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="name">Your Name</label>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                            </div>
+                            <div class="form-group col-md-12 mt-3">
+                                <label for="name">Mobile Number</label>
+                                <input type="text" class="form-control" maxlength="10" name="number" id="number" placeholder="Mobile number" required="">
+                            </div>
+                            <div class="form-group col-md-12 mt-3">
+                                <label for="enqEmail">Email</label>
+                                <input type="email" class="form-control" name="enqEmail" id="enqEmail" placeholder="Email address" required="">
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="name">Your Message</label>
+                            <textarea class="form-control" name="message" id="message" rows="3" required=""></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="sendMsg" class="btn btn-color text-white rounded-pill ">
+                    Send
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="testimonialModalShow" tabindex="-1" role="dialog" aria-labelledby="testimonialModalShowLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="testimonialModalShowLabel">Testimonial</h5>
+                </div>
+                <div class="modal-body" id="modalBody">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary testimonialModalClose">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="row mx-auto">
+            <div class="col-md-12 p-0" data-aos="fade-up" data-aos-duration="1000">
+                <div class="heroContent">
+                    <h1 class="fw-bold text-color">Our_products</h1>
+                    <div>
+                        <p class="text-white">
+                            <a class="text-decoration-none fw-bold text-light " href="./index.html">
+                            Home->
+                        </a> our_products </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <section style="margin-block:30px">
+        <div class="container-fluid px-0 mx-0">
+            <div class="row mx-0  aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                <div class="d-flex justify-content-center flex-column 
+                    col-md-8 bg-white">
+                    <div class="inside-div p-4" style="animation: slideInLeft 1s ease;">
+                        <h2 class="pb-3 fw-bolder custom-text-color">We Provide Best Quality</h2>
+                        <div class="text-div text-alignment ">
+                            <p style="text-align:justify">At V.S. Traders, we harness the tried-and-tested conventional covering technique, one (single-covered) or two (double-covered) yarns are tightly wrapped around a rubber or spandex core. This process gives the yarn better strength,
+                                stretch control, and durability, making it ideal for weaving, knitting, and narrow elastic applications.<br />
+                                <br /> Soft Top Elastic for Sock Tops<br /> Our Soft Top Elastic is specifically designed to provide gentle yet secure support at the cuff of every sock. Featuring ultra-fine cover yarns wrapped around a high-recovery core.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="products section-padding" data-aos="fade-up">
+            <div class="text-center mb-5">
+                <h2><span class="text-color text-uppercase fw-bold">Our Products Range</span></h2>
+            </div>
+            <div class="row mx-auto">
+                <div class="col-md-3 col-sm-6 content-card" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="card-big-shadow position-relative mb-5">
+                        <div class="card product-card card-just-text text-dark position-relative mb-3" data-background="color" data-color="blue" data-radius="none">
+                            <div class="content pb-4 text-center">
+                                <a href="./products/rubber-covered-thread"> <img src="./public/uploads/product_images/1753971998_c77067aea6070c65ea33.webp" width="100%" height="220px" alt=""></a>
+                                <h6 class="category text-truncate fw-bold pt-3 text-hover">RUBBER COVERED THREAD</h6>
+                                <button class="btn search-btn rounded-pill ms-2 responsive-btn" data-bs-target="#inquiryModal" data-bs-toggle="modal" type="submit">
+                                                Enquiry Now
+                                            </button>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 content-card" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="card-big-shadow position-relative mb-5">
+                        <div class="card product-card card-just-text text-dark position-relative mb-3" data-background="color" data-color="blue" data-radius="none">
+                            <div class="content pb-4 text-center">
+                                <a href="./products/covered-lycra-yarn"> <img src="./public/uploads/product_images/1753971854_1009d62c3fc638e2710a.webp" width="100%" height="220px" alt=""></a>
+                                <h6 class="category text-truncate fw-bold pt-3 text-hover">COVERED LYCRA YARN</h6>
+                                <button class="btn search-btn rounded-pill ms-2 responsive-btn" data-bs-target="#inquiryModal" data-bs-toggle="modal" type="submit">
+                                                Enquiry Now
+                                            </button>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 content-card" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="card-big-shadow position-relative mb-5">
+                        <div class="card product-card card-just-text text-dark position-relative mb-3" data-background="color" data-color="blue" data-radius="none">
+                            <div class="content pb-4 text-center">
+                                <a href="./products/elastic-yarn"> <img src="./public/uploads/product_images/1753971629_3851b2a255c5d90271e0.jpg" width="100%" height="220px" alt=""></a>
+                                <h6 class="category text-truncate fw-bold pt-3 text-hover">ELASTIC YARN</h6>
+                                <button class="btn search-btn rounded-pill ms-2 responsive-btn" data-bs-target="#inquiryModal" data-bs-toggle="modal" type="submit">
+                                                Enquiry Now
+                                            </button>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 content-card" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="card-big-shadow position-relative mb-5">
+                        <div class="card product-card card-just-text text-dark position-relative mb-3" data-background="color" data-color="blue" data-radius="none">
+                            <div class="content pb-4 text-center">
+                                <a href="./products/spandex-covered-thread"> <img src="./public/uploads/product_images/1753970821_b7eb4303ebb458966a40.webp" width="100%" height="220px" alt=""></a>
+                                <h6 class="category text-truncate fw-bold pt-3 text-hover">SPANDEX COVERED THREAD</h6>
+                                <button class="btn search-btn rounded-pill ms-2 responsive-btn" data-bs-target="#inquiryModal" data-bs-toggle="modal" type="submit">
+                                                Enquiry Now
+                                            </button>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- --------Our Videos----------- -->
+    <style>
+        .fb-box {
+            height: 350px;
+            width: 360px;
+        }
+
+        .mybox {
+            margin: 40px !important;
+        }
+
+        @media only screen and (max-width: 767px) {
+            #facebook-iframe {
+                width: 100% !important;
+                height: 500px !important;
+            }
+            .fb-box {
+                height: 600px;
+                width: 360px;
+            }
+            .mybox {
+                margin: 0px !important;
+            }
+        }
+
+        /* ===== Quick Links Styling ===== */
+
+        .quick-links h3 {
+            color: #fbbf24;
+            /* same accent as Address headings */
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .quick-links ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .quick-links ul li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .quick-links ul li a {
+            color: #000000;
+            /* Default black */
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+            padding: 3px 0;
+        }
+
+        .quick-links ul li a:hover {
+            color: #fbbf24;
+            /* Yellow on hover */
+            padding-left: 6px;
+        }
+
+        /* ===== Get In Touch (Footer Info) ===== */
+
+        .footer-info {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 25px 20px;
+            color: #f3f4f6;
+            text-align: left;
+            box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-info:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Headings inside Get In Touch */
+
+        .footer-info h3 {
+            color: #fbbf24;
+            /* Warm gold accent */
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Paragraph & text styling */
+
+        .footer-info p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #e5e7eb;
+        }
+
+        /* Strong labels (Direct Line, Email, etc.) */
+
+        .footer-info strong {
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        /* Responsive adjustments */
+
+        @media only screen and (max-width: 767px) {
+            .footer-info {
+                text-align: center;
+                /* Mobile readability */
+                padding: 20px 15px;
+            }
+            .footer-info h3 {
+                font-size: 20px;
+            }
+            .footer-info p {
+                font-size: 14px;
+            }
+        }
+    </style>
+    <footer id="footer">
+        <div class="footer-top footer-background text-light py-5">
+            <div class="container mybox">
+                <div class="row g-5 justify-content-center">
+                    <div class="col-md-6">
+                        <div class="footer-info text-center">
+                            <h3>Address</h3>
+                            <p>
+                                109 Ph II, Badli Industrial Estate, New Delhi, 110042.<br> DIGIPIN: 39J-J72-T88J
+                            </p>
+
+                            <h3>Call Us</h3>
+                            <p><strong>Factory Number:</strong> +91-11-45090037</p>
+                            <p><strong>Office Number:</strong> +91-11-27853633</p>
+                            <p><strong>Direct Line:</strong> +91-9810109278</p>
+
+                            <h3>Email</h3>
+                            <p>nitesh@vselasticthread.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-md-3 quick-links text-center">
+                        <h3>Quick Links</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="">Home</a></li>
+                            <li><a href="about">About Us</a></li>
+                            <li><a href="our_products">Our Products</a></li>
+                            <li><a href="industries_we_serve">Industries We Serve</a></li>
+                            <li><a href="certificates">Certificates</a></li>
+                            <li><a href="contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="fb-box mx-auto" style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; height:auto; margin-bottom:5px;">
+                            <div class="social-links text-center footer-center">
+                                <a target="_blank" href="https://twitter.com" class="twitter text-light me-1 rounded text-center fs-6" style="color: #1DA1F2 !important; font-size: 24px;">
+                                            <i class="fa-brands fa-twitter-square"></i>
+                                        </a>
+                                <a target="_blank" href="https://www.facebook.com/profile.php?id=100089532280637" class="facebook text-light me-1 rounded text-center fs-6" style="color: #1877F2!important; font-size: 24px;">
+                                            <i class="fa-brands fa-facebook-square"></i>
+                                        </a>
+                                <a target="_blank" href="https://www.instagram.com/vselasticthread?igsh=MXRhbzNwb2x6ejJ5MQ%3D%3D&utm_source=qr" class="instagram text-light me-1 rounded text-center fs-6" style="color: #C13584 !important; font-size: 24px;">
+                                            <i class="fa-brands fa-instagram-square"></i>
+                                        <!--</a>-->
+                                <!--<a target="_blank" href="https://www.youtube.com" class="google-plus text-light me-1 rounded text-center fs-6" style="color: #FF0000 !important; font-size: 24px;">-->
+                                <!--    <i class="fa-brands fa-youtube"></i>-->
+                                <!--</a>-->
+                                <a target="_blank" href="https://www.linkedin.com/in/nitesh-jain-71a160141?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="linkedin text-light me-1 rounded text-center fs-6" style="color: #0077B5 !important; font-size: 24px;">
+                                            <i class="fa-brands fa-linkedin ml-2"></i>
+                                        </a>
+                            </div>
+                            <iframe id="facebook-iframe" style="margin: auto; display: flex; margin-bottom:10px;width: 100%;height:100%;" src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/profile.php?id=100089532280637&tabs=timeline&width=345&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                                width="270" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        </div>
+                        <!--  <section class="newsletter-section text-center py-3">-->
+                        <!--<h3 class="fw-bold custom-text-color w-100">Our Newsletter</h3>-->
+                        <!--<hr class="m-auto bg-danger mb-3" style="width: 80px; height: 5px">-->
+                        <!--    <marquee behavior="scroll" direction="left" style="width:400px;">-->
+                        <!-- Newsletter content here -->
+                        <!--        test -->
+                        <!--    </marquee>-->
+                        <!--</section>-->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <section class="copyright-background">
+        <div class="row">
+            <div class="col-md-12 text-center copyright-text">
+                Supreme Hosiery Factory | V. S. Traders | <a href="./index.html" target="_blank">vselasticthread.com</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- <a id="button" class="scroll-to-top scroll-to-target  position-fixed text-light fs-6 text-center rounded-circle border-0" data-target="html">
+    <span class="fa fa-arrow-up">
+    </span>
+</a> -->
+    <!-- Appointment Booking Form (global) -->
+    <div class="container-fluid d-none" id="appointment-booking">
+        <div class="row">
+            <div class="col-md-5 offset-md-7">
+                <form class="contact-form m-3 p-3 card " method="post" action="/submit-query">
+                    <!-- form fields same as before -->
+                    <div class="form-group col-md-12">
+                        <label for="bookingName">Name</label>
+                        <input value="" type="text" id="bookingName" name="bookingName" class="form-control" placeholder="Your Name">
+                        <span class="text-danger error-text-font"></span>
+                    </div>
+                    <div class="form-group col-md-6 mt-2">
+                        <label for="bookingEmail">Email</label>
+                        <input value="" type="text" class="form-control" id="bookingEmail" name="bookingEmail" placeholder="Your Email">
+                        <span class="text-danger error-text-font"></span>
+                    </div>
+                    <div class="form-group col-md-6 mt-2">
+                        <label for="bookingPhone">Phone</label>
+                        <input value="" type="text" class="form-control" id="bookingPhone" name="bookingPhone" maxlength="10" placeholder="Mobile number">
+                        <span class="text-danger error-text-font"></span>
+                    </div>
+                    <div class="form-group col-md-6 mt-2">
+                        <label for="bookingDate">Booking Date</label>
+                        <input value="" type="date" class="form-control" id="bookingDate" name="bookingDate">
+                        <span class="text-danger error-text-font"></span>
+                    </div>
+                    <div class="form-group col-md-6 mt-2">
+                        <label for="bookingTime">Booking Time</label>
+                        <select name="bookingTime" id="bookingTime" class="form-control" value="">
+                            <option value="">Select Time</option>
+                                                            <option value="0">12:00 am</option>
+                                <option value="0:30">12:30 am</option>
+                                                            <option value="1">1:00 am</option>
+                                <option value="1:30">1:30 am</option>
+                                                            <option value="2">2:00 am</option>
+                                <option value="2:30">2:30 am</option>
+                                                            <option value="3">3:00 am</option>
+                                <option value="3:30">3:30 am</option>
+                                                            <option value="4">4:00 am</option>
+                                <option value="4:30">4:30 am</option>
+                                                            <option value="5">5:00 am</option>
+                                <option value="5:30">5:30 am</option>
+                                                            <option value="6">6:00 am</option>
+                                <option value="6:30">6:30 am</option>
+                                                            <option value="7">7:00 am</option>
+                                <option value="7:30">7:30 am</option>
+                                                            <option value="8">8:00 am</option>
+                                <option value="8:30">8:30 am</option>
+                                                            <option value="9">9:00 am</option>
+                                <option value="9:30">9:30 am</option>
+                                                            <option value="10">10:00 am</option>
+                                <option value="10:30">10:30 am</option>
+                                                            <option value="11">11:00 am</option>
+                                <option value="11:30">11:30 am</option>
+                                                            <option value="12">12:00 pm</option>
+                                <option value="12:30">12:30 pm</option>
+                                                            <option value="13">1:00 pm</option>
+                                <option value="13:30">1:30 pm</option>
+                                                            <option value="14">2:00 pm</option>
+                                <option value="14:30">2:30 pm</option>
+                                                            <option value="15">3:00 pm</option>
+                                <option value="15:30">3:30 pm</option>
+                                                            <option value="16">4:00 pm</option>
+                                <option value="16:30">4:30 pm</option>
+                                                            <option value="17">5:00 pm</option>
+                                <option value="17:30">5:30 pm</option>
+                                                            <option value="18">6:00 pm</option>
+                                <option value="18:30">6:30 pm</option>
+                                                            <option value="19">7:00 pm</option>
+                                <option value="19:30">7:30 pm</option>
+                                                            <option value="20">8:00 pm</option>
+                                <option value="20:30">8:30 pm</option>
+                                                            <option value="21">9:00 pm</option>
+                                <option value="21:30">9:30 pm</option>
+                                                            <option value="22">10:00 pm</option>
+                                <option value="22:30">10:30 pm</option>
+                                                            <option value="23">11:00 pm</option>
+                                <option value="23:30">11:30 pm</option>
+                                                    </select>
+                        <span class="text-danger error-text-font"></span>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="bookingQuery">Query</label>
+                        <textarea class="form-control" name="bookingQuery" id="bookingQuery" rows="3"></textarea>
+                        <span class="text-danger error-text-font"></span>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" id="bookingQuerySmt" class="btn btn-color text-white rounded-pill ">Submit Query</button>
+                    </div>
+                    <button type="button" id="appo-button-close" class="btn btn-danger text-white rounded ">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./public/assets/js/jquery.min.js"></script>
+    <script src="./public/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./public/assets/js/jquery.validate.min.js"></script>
+    <script src="./public/assets/js/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./public/assets/js/script.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script></script> -->
+    <script type="text/javascript" src="./public/theme1/assets/js/pages/common.js"></script>
+    <script>
+        $(function() {
+            AOS.init();
+        });
+    </script>
+
+    <script>
+        $(function() {
+            //open close appointment form
+            $('#appo-button-close').on('click', function() {
+                $('#appointment-booking').removeClass('booking-open');
+                $('#appo-button').addClass('button-open');
+            });
+            $('#appo-button').on('click', function() {
+                $('#appointment-booking').addClass('booking-open');
+                $('#appo-button').removeClass('button-open');
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var keywords = [{
+                "keyword": "Bobbin elastic thread manufacturers in Delhi NCR",
+                "page_url": "/our_products"
+            }, {
+                "keyword": "  Bobbin elastic suppliers for garment factories Delhi NCR",
+                "page_url": "/our_products"
+            }, {
+                "keyword": "  Hosiery bobbin elastic manufacturers in Noida Gurgaon Delhi NCR",
+                "page_url": "/our_products"
+            }, {
+                "keyword": "  Bobbin elastic for sewing and textile units in Delhi NCR",
+                "page_url": "/our_products"
+            }];
+            if (keywords && keywords.length > 0) {
+                var keywordString = keywords.map(function(keyword) {
+                    return keyword.keyword;
+                }).join(', ');
+                var metaKeywordsTag = document.createElement('meta');
+                metaKeywordsTag.name = 'keywords';
+                metaKeywordsTag.content = keywordString;
+                document.head.appendChild(metaKeywordsTag);
+            }
+        });
+    </script>
+</body>
+
+</html>
+

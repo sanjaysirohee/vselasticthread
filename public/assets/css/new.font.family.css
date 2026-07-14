@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "rototo-bold";
+    src: url('../../font/roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: "rototo-bold-italic";
+    src: url('../../font/roboto/Roboto-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: "rototo-italic";
+    src: url('../../font/roboto/Roboto-Italic.ttf');
+}
+
+@font-face {
+    font-family: "rototo-regular";
+    src: url('../../font/roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: "fascinate";
+    src: url('../../font/fascinate/Fascinate.ttf');
+}
+
+@font-face {
+    font-family: "joan";
+    src: url('../../font/joan/joan.ttf');
+}
+
+@font-face {
+    font-family: "kdam";
+    src: url('../../font/kdam/Kdam.ttf');
+}
+
+@font-face {
+    font-family: "lora";
+    src: url('../../font/lora/Lora.ttf');
+}
+
+@font-face {
+    font-family: "noto_sans";
+    src: url('../../font/noto_sans/NotoSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: "oswald";
+    src: url('../../font/oswald/Oswald.ttf');
+}
+
+@font-face {
+    font-family: "raleway";
+    src: url('../../font/raleway/Raleway.ttf');
+}
+
+@font-face {
+    font-family: "roboto";
+    src: url('../../font/roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: "roboto_slab";
+    src: url('../../font/roboto_slab/robotoslab.ttf');
+}
+
+@font-face {
+    font-family: "tai_heritage";
+    src: url('../../font/tai_heritage/taiheritage-regular.ttf');
+}
+
+@font-face {
+    font-family: "work_sans";
+    src: url('../../font/work_sans/worksans.ttf');
+}

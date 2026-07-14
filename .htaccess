@@ -1,0 +1,21 @@
+RewriteEngine on  # Activate the rewrite engine
+
+# Check if the requested URL is not a directory
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Check if the requested URL with ".html" appended exists as a file
+RewriteCond %{REQUEST_FILENAME}.html -f
+
+# Rewrite the URL to append ".html" if both conditions above are true
+RewriteRule ^(.*)$ $1.html
+
+RewriteEngine on  # Activate the rewrite engine
+
+# Check if the requested URL is not a directory
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Check if the requested URL with ".html" appended exists as a file
+RewriteCond %{REQUEST_FILENAME}.php -f
+
+# Rewrite the URL to append ".html" if both conditions above are true
+RewriteRule ^(.*)$ $1.php
